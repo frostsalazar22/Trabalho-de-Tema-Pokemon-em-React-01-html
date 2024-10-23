@@ -1,0 +1,37 @@
+/* Estilos para o modo escuro */
+.dark-mode {
+  background-color: #121212; /* Cor de fundo do corpo */
+  color: #e0e0e0; /* Cor do texto */
+}
+
+.dark-mode header {
+  background-color: #1f1f1f; /* Cor de fundo do cabeçalho */
+  color: #e0e0e0; /* Cor do texto do cabeçalho */
+}
+
+.dark-mode footer {
+  background-color: #1f1f1f; /* Cor de fundo do rodapé */
+  color: #e0e0e0; /* Cor do texto do rodapé */
+}
+
+.dark-mode .search-input {
+  background-color: #333; /* Cor de fundo do campo de busca */
+  color: #e0e0e0; /* Cor do texto do campo de busca */
+}
+
+.dark-mode .search-button {
+  background-color: #444; /* Cor de fundo do botão de busca */
+  color: #e0e0e0; /* Cor do texto do botão de busca */
+}
+
+.dark-mode .sidebar {
+  background-color: #1f1f1f; /* Cor de fundo da sidebar */
+}
+
+.dark-mode .footer-link {
+  color: #e0e0e0; /* Cor dos links no rodapé */
+}
+
+.dark-mode .footer-link:hover {
+  color: #7f37c9; /* Cor dos links no rodapé ao passar o mouse */
+}

@@ -1,0 +1,59 @@
+/* ============================== */
+/* Estilos para o Filtro por tipo */
+/* ============================== */
+.container-filter {
+    display: flex;                             /* Define o elemento como um flex container */
+    align-items: center;                       /* Alinha os itens verticalmente no centro */
+    gap: 10px;                                 /* Define o espaçamento entre os itens */
+    cursor: pointer;                           /* Altera o cursor ao passar por cima */
+}
+
+.icon-filter {
+    display: flex;                             /* Define o elemento como um flex container */
+    align-items: center;                       /* Alinha os itens verticalmente no centro */
+    margin-bottom: 20px;                       /* Define a margem inferior */
+}
+
+.icon-filter-img {
+    width: 30px;                               /* Define a largura da imagem */
+    height: auto;                              /* Mantém a proporção da imagem */
+}
+
+.container-filters {
+    display: flex;                             /* Define o elemento como um flex container */
+    justify-content: center;                   /* Alinha os itens horizontalmente no centro */
+    position: fixed;                           /* Define a posição fixa */
+    top: 0;                                    /* Alinha o topo do elemento com o topo do viewport */
+    left: -300px;                              /* Move o elemento para fora da tela */
+    width: 250px;                              /* Define a largura */
+    color: #555;                             /* Define a cor do texto */
+    background-color: #f2f2f2;               /* Define a cor de fundo */
+    height: 100%;                              /* Define a altura */
+    padding-top: 140px;                        /* Adiciona espaço acima do conteúdo */
+    transition: all 0.3s linear;               /* Adiciona uma transição suave */
+}
+
+.container-filters.active {
+    left: 0;                                   /* Move o elemento para a posição inicial */
+}
+
+.filter-by-type {
+    display: flex;                             /* Define o elemento como um flex container */
+    flex-direction: column;                    /* Empilha os elementos verticalmente */
+    gap: 20px;                                 /* Define o espaçamento entre os elementos */
+}
+
+.filter-by-type span {
+    font-weight: 700;                          /* Define o peso da fonte */
+    font-size: 22px;                           /* Define o tamanho da fonte */
+}
+
+.group-type {
+    display: flex;                             /* Define o elemento como um flex container */
+    gap: 10px;                                 /* Define o espaçamento entre os itens */
+    margin-left: 15px;                         /* Define a margem esquerda */
+}
+
+.group-type label {
+    cursor: pointer;                           /* Altera o cursor ao passar por cima */
+}

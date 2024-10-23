@@ -1,0 +1,107 @@
+/* ============================== */
+/* Estilos para a Pagina do Poke */
+/* ============================== */
+
+.pokemon-details {
+  text-align: center;                          /* Centraliza o texto dentro do contêiner */
+  margin: 10px;                                /* Adiciona uma margem ao redor do contêiner */
+  margin-top: 80px;                            /* Adiciona uma margem superior específica */
+  border: 2px solid #218b13;                 /* Define uma borda sólida ao redor do contêiner */
+  border-radius: 20px;                         /* Arredonda os cantos da borda */
+  padding: 20px;                               /* Adiciona um pouco de preenchimento para espaço interno */
+}
+
+.pokemon-details .images {
+  display: flex;                               /* Usa flexbox para alinhar os itens */
+  justify-content: center;                     /* Centraliza os itens horizontalmente */
+  gap: 50px;                                   /* Adiciona um espaçamento entre os itens */
+}
+
+.pokemon-details .image-container {
+  background-color: #bbbbbb;                 /* Define a cor de fundo do contêiner */
+  text-align: center;                          /* Centraliza o texto dentro do contêiner */
+  border: 5px solid #8B4513;                 /* Define uma borda sólida ao redor do contêiner */
+  border-radius: 20px;                         /* Arredonda os cantos da borda */
+  padding: 10px;                               /* Adiciona preenchimento interno */
+}
+
+.pokemon-details .image-container img {
+  width: 180px;                                /* Define a largura das imagens */
+}
+
+.pokemon-details .effectiveness,
+.pokemon-details .evolution-line {
+  margin-top: 20px;                            /* Adiciona uma margem superior específica */
+}
+
+.evolution-line .evolution-cards {
+  display: flex;                               /* Usa flexbox para alinhar os itens */
+  justify-content: center;                     /* Centraliza os itens horizontalmente */
+  gap: 20px;                                   /* Adiciona um espaçamento entre os itens */
+  flex-wrap: nowrap;                           /* Padrão, não envolve */
+}
+
+.evolution-line .evolution-cards.wrap {
+  flex-wrap: wrap;                             /* Adiciona flex-wrap quando a classe "wrap" está presente */
+}
+
+.EvoCard {
+  display: flex;                               /* Usa flexbox para alinhar os itens */
+  flex-direction: column;                      /* Alinha os itens em uma coluna */
+  align-items: center;                         /* Centraliza os itens horizontalmente */
+  gap: 10px;                                   /* Adiciona um espaçamento entre os itens */
+  border: 2px solid #8B4513;                 /* Define uma borda sólida ao redor do contêiner */
+  border-radius: 20px;                         /* Arredonda os cantos da borda */
+  padding: 10px;                               /* Adiciona preenchimento interno */
+}
+
+.EvoCard img {
+  width: 180px;                                /* Define a largura das imagens */
+  height: 180px;                               /* Define a altura das imagens */
+}
+
+.EvoCard div {
+  text-align: center;                          /* Centraliza o texto dentro do contêiner */
+}
+
+.EvoCard a:link,
+.EvoCard a:visited,
+.EvoCard a:hover,
+.EvoCard a:active {
+  color: black;                               /* Define a cor do texto para os links */
+  text-decoration: none;                        /* Remove a sublinhado dos links */
+}
+
+.iconStyle {
+  font-size: 40px;                              /* Define o tamanho da fonte do ícone */
+  margin-right: 10px;                           /* Adiciona uma margem à direita do ícone */
+  cursor: pointer;                              /* Altera o cursor para indicar que é clicável */
+}
+
+.nameStyle {
+  font-size: 40px;                              /* Define o tamanho da fonte do nome */
+  margin-right: 10px;                           /* Adiciona uma margem à direita do nome */
+}
+
+.header {
+  display: flex;                                /* Usa flexbox para alinhar os itens */
+  align-items: center;                          /* Alinha os itens verticalmente ao centro */
+  justify-content: center;                      /* Centraliza os itens horizontalmente */
+}
+
+.info-table {
+  margin: 20px auto;                            /* Adiciona uma margem ao redor da tabela e centraliza */
+  border-collapse: collapse;                    /* Remove os espaçamentos entre as células da tabela */
+  width: 80%;                                   /* Define a largura da tabela como 80% do contêiner pai */
+  max-width: 600px;                             /* Define a largura máxima da tabela */
+}
+
+.info-table td {
+  border: 2px solid #ccc;                     /* Define uma borda sólida ao redor das células */
+  padding: 10px;                                /* Adiciona preenchimento interno às células */
+  text-align: left;                             /* Alinha o texto à esquerda dentro das células */
+}
+
+.info-table tr:nth-child(even) {
+  background-color: #f9f9f9;                  /* Define uma cor de fundo para as linhas pares */
+}

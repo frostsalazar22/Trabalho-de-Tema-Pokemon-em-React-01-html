@@ -1,0 +1,67 @@
+/* ============================== */
+/* Estilos para o Caixa de Sidebar ou abalateral */
+/* ============================== */
+.sidebar {
+  position: fixed;                        /* Fixa a sidebar na posição especificada na janela */
+  top: 0;                                 /* Alinha a sidebar ao topo da janela */
+  left: -250px;                           /* Inicialmente esconde a sidebar à esquerda da janela */
+  width: 250px;                           /* Define a largura da sidebar */
+  height: 100%;                           /* Define a altura da sidebar como 100% da altura da janela */
+  background-color: rgba(0, 0, 0, 0.7); /* Define a cor de fundo da sidebar */
+  color: #efeff1;                       /* Define a cor do texto na sidebar */
+  transition: left 0.3s ease;             /* Adiciona uma transição suave para a propriedade 'left' */
+  padding-top: 60px;                      /* Adiciona um preenchimento superior para a sidebar */
+  z-index: 1000;                          /* Garante que a sidebar fique acima de outros elementos */
+}
+
+.sidebar.open {
+  left: 0;                                /* Move a sidebar para a posição visível quando está aberta */
+}
+
+.close-btn {
+  position: absolute;                     /* Posiciona o botão de fechar de forma absoluta em relação à sidebar */
+  top: 10px;                              /* Alinha o botão de fechar 10px a partir do topo da sidebar */
+  right: 10px;                            /* Alinha o botão de fechar 10px a partir da direita da sidebar */
+  background-color: #ff0000;            /* Define a cor de fundo do botão de fechar */
+  color: #fff;                          /* Define a cor do texto do botão de fechar */
+  border: none;                           /* Remove qualquer borda do botão de fechar */
+  padding: 10px;                          /* Adiciona um preenchimento de 10px ao botão de fechar */
+  cursor: pointer;                        /* Muda o cursor para um ponteiro quando sobre o botão de fechar */
+}
+
+.sidebar nav ul {
+  list-style: none;                       /* Remove os marcadores de lista padrão */
+  padding: 0;                             /* Remove o preenchimento padrão */
+}
+
+.sidebar nav ul li {
+  padding: 10px;                          /* Adiciona um preenchimento de 10px a cada item de lista */
+}
+
+.sidebar nav ul li a {
+  color: #555;                          /* Define a cor do texto dos links na sidebar */
+  text-decoration: none;                  /* Remove a sublinhado dos links */
+  display: block;                         /* Define os links como elementos de bloco */
+}
+
+.type-filters {
+  margin-top: 20px;                      /* Adiciona uma margem superior de 20px */
+  display: flex;                         /* Usa o layout flexbox */
+  flex-direction: column;                /* Organiza os elementos em uma coluna */
+  padding-left: 25%;                     /* Adiciona um preenchimento à esquerda de 15px */
+}
+
+.type-filters span {
+  font-weight: 700;                      /* Define o peso da fonte como negrito */
+  font-size: 22px;                       /* Define o tamanho da fonte como 22px */
+}
+
+.type-filter {
+  margin-bottom: 10px;                   /* Adiciona uma margem inferior de 10px */
+  display: flex;                         /* Usa o layout flexbox */
+  gap: 20px;                             /* Adiciona um espaçamento de 10px entre os elementos */
+}
+
+.type-filter label {
+  cursor: pointer;                       /* Muda o cursor para um ponteiro quando sobre o rótulo */
+}

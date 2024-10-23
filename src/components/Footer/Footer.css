@@ -1,0 +1,152 @@
+/* ============================== */
+/* Estilos para o Rodape */
+/* ============================== */ 
+
+/* Definição das variáveis de cores neutras */
+:root {
+    --color-neutral-0: #0e0c0c;                                     /* Cor neutra 0 */
+    --color-neutral-10: rgba(25, 25, 25);                           /* Cor neutra 10 */
+    --color-neutral-30: #a8a29e;                                    /* Cor neutra 30 */
+    --color-neutral-40: #f5f5f5;                                    /* Cor neutra 40 */
+}
+
+/* Reset de estilos para todos os elementos */
+* {
+    font-family: 'Inter', sans-serif;                                 /* Define a fonte */
+    margin: 0;                                                        /* Remove as margens */
+    padding: 0;                                                       /* Remove o preenchimento */
+    box-sizing: border-box;                                           /* Define o modelo de caixa */
+    letter-spacing: 1px;                                              /* Define o espaçamento entre letras */
+}
+
+/* Estilos para a seção principal */
+main {
+    height: 80vh;                                                     /* Define a altura como 80% da altura da viewport */
+}
+
+/* Estilos para o rodapé */
+footer {
+    width: 100%;                                                      /* Ocupa toda a largura disponível */
+    color: var(--color-neutral-40);                                   /* Cor do texto */
+}
+
+/* Estilos para o logo no rodapé */
+#footer_logo img {
+    width: 230px;                                                     /* Largura da imagem */
+    height: auto;                                                     /* Altura automática, mantendo proporções */
+}
+
+/* Estilos para os links no rodapé */
+.footer-link {
+    text-decoration: none;                                            /* Remove a decoração de texto */
+}
+
+/* Estilos para o conteúdo do rodapé */
+#footer_content {
+    background-color: var(--color-neutral-10);                        /* Cor de fundo */
+    display: grid;                                                    /* Layout em grade */
+    grid-template-columns: repeat(4, 1fr);                            /* 4 colunas iguais */
+    padding: 3rem 3.5rem;                                             /* Espaçamento interno */
+}
+
+/* Estilos para a lista de links no rodapé */
+.footer-list {
+    display: flex;                                                    /* Layout em linha */
+    flex-direction: column;                                           /* Disposição vertical dos itens */
+    gap: 0.75rem;                                                     /* Espaçamento entre os itens */
+    list-style: none;                                                 /* Remoção dos marcadores de lista */
+}
+
+/* Estilos para os links na lista do rodapé */
+.footer-list .footer-link {
+    color: var(--color-neutral-30);                                   /* Cor do texto */
+    transition: all 0.4s;                                             /* Transição suave de propriedades */
+}
+
+/* Estilos para os links na lista do rodapé quando passar o mouse */
+.footer-list .footer-link:hover {
+    color: #7f37c9;                                                  /* Cor do texto ao passar o mouse */
+}
+
+/* Estilos para o formulário de inscrição no rodapé */
+#footer_subscribe {
+    display: flex;                                                    /* Layout em linha */
+    flex-direction: column;                                           /* Disposição vertical dos itens */
+    gap: 1.5rem;                                                      /* Espaçamento entre os itens */
+}
+
+/* Estilos para o parágrafo dentro do formulário de inscrição */
+#footer_subscribe p {
+    color: var(--color-neutral-30);                                   /* Cor do texto */
+}
+
+/* Estilos para o grupo de entrada de texto e botão */
+#input_group {
+    display: flex;                                                    /* Layout em linha */
+    align-items: center;                                              /* Alinha verticalmente */
+    background-color: var(--color-neutral-0);                         /* Cor de fundo */
+    border-radius: 4px;                                               /* Raio do canto */
+}
+
+/* Estilos para a entrada de texto no grupo de entrada */
+#input_group input {
+    all: unset;                                                       /* Remove todos os estilos padrão */
+    padding: 0.75rem;                                                 /* Preenchimento interno */
+    width: 100%;                                                      /* Largura total */
+}
+
+/* Estilos para o botão no grupo de entrada */
+#input_group button {
+    background-color: #7f37c9;                                       /* Cor de fundo do botão */
+    border: none;                                                      /* Sem borda */
+    color: var(--color-neutral-40);                                    /* Cor do texto */
+    padding: 0px 1.25rem;                                              /* Preenchimento interno */
+    font-size: 1.125rem;                                               /* Tamanho da fonte */
+    height: 100%;                                                      /* Altura total */
+    border-radius: 0px 4px 4px 0px;                                    /* Raio do canto */
+    cursor: pointer;                                                   /* Cursor do mouse */
+    transition: all 0.4s;                                              /* Transição suave de propriedades */
+}
+
+/* Estilos para o botão no grupo de entrada quando passar o mouse */
+#input_group button:hover {
+    opacity: 0.8;                                                      /* Opacidade ao passar o mouse */
+}
+
+/* Estilos para o aviso de direitos autorais no rodapé */
+#footer_copyright {
+    display: flex;                                                     /* Layout em linha */
+    justify-content: center;                                           /* Alinhamento horizontal */
+    background-color: var(--color-neutral-0);                          /* Cor de fundo */
+    font-size: 0.9rem;                                                 /* Tamanho da fonte */
+    padding: 1.5rem;                                                   /* Preenchimento interno */
+    font-weight: 100;                                                  /* Peso da fonte */
+}
+
+/* Responsividade do rodapé para telas menores */
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);                         /* 2 colunas iguais */
+        gap: 2rem;                                                     /* Espaçamento entre colunas */
+    }
+}
+
+/* Responsividade do rodapé para telas muito pequenas */
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);                         /* 1 coluna */
+        padding: 3rem 2rem;                                            /* Espaçamento interno */
+    }
+}
+
+/* Responsividade do rodapé para telas menores */
+@media (max-width: 768px) {
+    /* Estilos adicionais para elementos específicos */
+    .rodape-div-1, .rodape-div-2, .rodape-div-3 {
+        width: calc(50% - 20px);                                       /* Largura dos elementos */
+        padding: 10px;                                                 /* Preenchimento interno */
+    }
+    .rodape-div {
+        padding: 60px 0px 40px 0px;                                    /* Preenchimento interno */
+    }
+}

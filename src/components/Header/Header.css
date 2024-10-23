@@ -1,0 +1,106 @@
+/* ============================== */
+/* Estilos para o Cabeçario */
+/* ============================== */
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.7);                                         /* Cor de fundo com transparência */
+    color: #ffffff;                                                               /* Cor do texto */
+    padding: 10px 0;                                                                /* Preenchimento superior e inferior */
+    position: fixed;                                                                /* Fixa o cabeçalho na parte superior */
+    top: 0;                                                                         /* Distância do topo */
+    width: 100%;                                                                    /* Largura total */
+    z-index: 1000;                                                                  /* Z-index para garantir que o cabeçalho esteja sempre acima de outros elementos */
+}
+
+/* Estilos para a lista de navegação */
+nav ul {
+    list-style: none;                                                               /* Remove os marcadores de lista */
+    display: flex;                                                                  /* Layout flexível */
+}
+
+/* Estilos para cada item da lista de navegação */
+nav ul li {
+    display: inline;                                                                /* Exibição em linha */
+    margin-left: 20px;                                                              /* Margem à esquerda */
+}
+
+/* Estilos para os links na lista de navegação */
+nav ul li a {
+    color: #ffffff;                                                                /* Cor do texto */
+    text-decoration: none;                                                           /* Remove a decoração do texto */
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 5px 0;                                                              /* Reduz o preenchimento superior e inferior */
+    }
+    nav ul {
+        flex-direction: column;                                                      /* Altera a direção da lista para vertical */
+        text-align: center;                                                          /* Centraliza o texto */
+    }
+    nav ul li {
+        margin: 10px 0;                                                              /* Margem entre os itens da lista */
+    }
+}
+
+/* ============================== */
+/* Estilos para o menu suspenso */
+/* ============================== */
+
+/* Estilos para o contêiner do menu suspenso */
+.dropdown {
+    position: relative;                                                              /* Posição relativa */
+    display: inline-block;                                                           /* Exibição em bloco em linha */
+}
+
+/* Estilos para o conteúdo do menu suspenso */
+.dropdown-content {
+    display: none;                                                                   /* Oculta o conteúdo por padrão */
+    position: absolute;                                                              /* Posição absoluta */
+    background-color: #45453A;                                                     /* Cor de fundo */
+    min-width: 120px;                                                                /* Largura mínima */
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .2);                                       /* Sombra */
+    border-radius: 0;                                                                /* Raio da borda */
+    z-index: 1;                                                                      /* Z-index para garantir que o menu esteja acima de outros elementos */
+}
+
+/* Estilos para os links dentro do menu suspenso */
+.dropdown-content a {
+    color: #fff;                                                                    /* Cor do texto */
+    padding: 12px 16px;                                                               /* Preenchimento interno */
+    text-decoration: none;                                                            /* Remove a decoração do texto */
+    display: block;                                                                   /* Exibição em bloco */
+}
+
+/* Estilos para os links dentro do menu suspenso quando passar o mouse */
+.dropdown-content a:hover {
+    background-color: #333;                                                         /* Cor de fundo ao passar o mouse */
+}
+
+/* Exibe o conteúdo do menu suspenso quando passar o mouse sobre o contêiner */
+.dropdown:hover .dropdown-content {
+    display: block;                                                                                                      /* Exibe o conteúdo */
+}
+
+
+/* Adicione algumas regras de estilo para posicionar corretamente os links de autenticação*/
+
+
+.auth-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.auth-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}

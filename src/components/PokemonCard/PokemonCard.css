@@ -1,0 +1,64 @@
+/* ============================== */
+/* Estilos para o Card do Pokemon */
+/* ============================== */
+.pokeContainer {
+    display: flex;                                          /* Define o elemento como um flex container */
+    flex-wrap: wrap;                                        /* Permite que os itens sejam quebrados em várias linhas se não couberem em uma linha */
+    align-items: center;                                    /* Alinha os itens verticalmente no centro */
+    justify-content: space-between;                         /* Distribui os itens igualmente ao longo do eixo principal com espaço entre eles */
+    margin: 0 auto;                                         /* Define as margens superior e inferior como 0 e as laterais como automáticas para centralizar horizontalmente */
+    max-width: 1200px;                                      /* Define a largura máxima do container */
+    margin-top: 80px;                                       /* Define a margem superior */
+}
+
+.pokemon {
+    background-color: #eee;                              /* Define a cor de fundo */
+    border-radius: 10px;                                   /* Define o raio das bordas */
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);     /* Adiciona uma sombra */
+    margin: 10px;                                          /* Define as margens externas */
+    padding: 20px;                                         /* Define o preenchimento interno */
+    text-align: center;                                    /* Alinha o texto no centro */
+    height: 220px;                                         /* Define uma altura fixa */
+    transition: height 0.3s ease;                          /* Adiciona uma transição suave para a altura */
+    overflow: hidden;                                      /* Oculta qualquer conteúdo que exceda a altura */
+    display: flex;                                         /* Define o elemento como um flex container */
+    flex-direction: column;                                /* Empilha os elementos verticalmente */
+    justify-content: center;                               /* Alinha os itens verticalmente no centro */
+}
+
+.pokemon:hover {
+    height: 220px;                                         /* Ajusta a altura ao passar o mouse */
+}
+
+.imgContainer {
+    display: flex;                                         /* Define o elemento como um flex container */
+    justify-content: center;                               /* Alinha os itens horizontalmente no centro */
+    align-items: center;                                   /* Alinha os itens verticalmente no centro */
+    background-color: rgba(255, 255, 255, 0.6);          /* Define a cor de fundo com transparência */
+    border-radius: 50%;                                    /* Define o raio das bordas */
+    width: 110px;                                          /* Define a largura */
+    height: 110px;                                         /* Define a altura */
+}
+
+.imgContainer img {
+    width: 110px;                                          /* Define a largura da imagem */
+    height: 110px;                                         /* Define a altura da imagem */
+}
+
+.info {
+    margin-top: 20px;                                      /* Define a margem superior */
+    width: 110px;                                          /* Define a largura */
+    height: 110px;                                         /* Define a altura */
+}
+
+.number {
+    background-color: rgba(0, 0, 0, 0.15);                /* Define a cor de fundo com transparência */
+    padding: 2px 13px;                                      /* Define o preenchimento */
+    border-radius: 10px;                                    /* Define o raio das bordas */
+    font-size: 0.8rem;                                      /* Define o tamanho da fonte */
+}
+
+.name {
+    margin: 15px 0 7px;                                     /* Define as margens */
+    letter-spacing: 1.5px;                                  /* Define o espaçamento entre as letras */
+}

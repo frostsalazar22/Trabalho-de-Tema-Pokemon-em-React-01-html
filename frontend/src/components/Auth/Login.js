@@ -1,7 +1,7 @@
 // src/components/Auth/Login.js
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../services/firebase';
+import firebaseService from '../../services/FirebaseService';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css'; // Importação do CSS para estilos de login e cadastro
 
@@ -9,6 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const auth = firebaseService.getAuthInstance();
 
   const handleLogin = async () => {
     try {

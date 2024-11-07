@@ -1,7 +1,7 @@
 // src/components/Auth/Signup.js
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from '../../services/firebase';
+import firebaseService from '../../services/FirebaseService';
 import './Auth.css'; // Importação do CSS para estilos de login e cadastro
 
 const Signup = () => {
@@ -9,6 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const auth = firebaseService.getAuthInstance();
 
   const handleSignup = async () => {
     if (password !== confirmPassword) {

@@ -1,12 +1,14 @@
+// src/components/Header/Header.js
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import ModeNightIcon from '@mui/icons-material/ModeNight'; // Importa o ícone de modo noturno
-import { Link } from 'react-router-dom'; // Importa o Link do react-router-dom
+import ModeNightIcon from '@mui/icons-material/ModeNight';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = ({ setSearchTerm, setSelectedGeneration, availableGenerations, toggleSidebar, toggleDarkMode }) => {
   return (
-    <header>
+    <header className="header">
       <div className="search-container">
         <IconButton
           size="large"
@@ -30,18 +32,18 @@ const Header = ({ setSearchTerm, setSelectedGeneration, availableGenerations, to
         </form>
         <nav>
           <ul>
-            <li><a href="/">Início</a></li>
+            <li><Link to="/">Início</Link></li>
             <li className="dropdown">
-              <a href="#" className="dropbtn">Geração</a>
+              <Link to="#" className="dropbtn">Geração</Link>
               <div className="dropdown-content">
                 {availableGenerations.map(gen => (
-                  <a
+                  <Link
                     key={gen}
-                    href="#"
+                    to="#"
                     onClick={() => setSelectedGeneration(gen)}
                   >
                     Geração {gen}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </li>
@@ -56,13 +58,14 @@ const Header = ({ setSearchTerm, setSelectedGeneration, availableGenerations, to
         >
           <ModeNightIcon />
         </IconButton>
-        <div className="auth-links"> {/* Adiciona um contêiner para os links de autenticação */}
-          <Link to="/favorites" className="auth-link">Login</Link>
-          <Link to="#" className="auth-link">Cadastre-se</Link>
+        <div className="auth-links">
+          <Link to="/login" className="auth-link">Login</Link>
+          <Link to="/signup" className="auth-link">Cadastre-se</Link>
+          <Link to="/favorites" className="auth-link">Meus Favoritos</Link>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header;

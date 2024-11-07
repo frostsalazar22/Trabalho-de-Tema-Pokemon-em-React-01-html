@@ -8,7 +8,7 @@
     justify-content: space-between;                         /* Distribui os itens igualmente ao longo do eixo principal com espaço entre eles */
     margin: 0 auto;                                         /* Define as margens superior e inferior como 0 e as laterais como automáticas para centralizar horizontalmente */
     max-width: 1200px;                                      /* Define a largura máxima do container */
-    margin-top: 80px;                                       /* Define a margem superior */
+    margin-top: 10px;                                       /* Define a margem superior */
 }
 
 .pokemon {

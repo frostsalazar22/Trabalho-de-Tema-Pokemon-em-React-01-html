@@ -18,6 +18,10 @@
 - **npm install axios**
 - **npm install @emotion/react @emotion/styled**
 
+
+## Link para o Firebase Ultilizado
+- **https://console.firebase.google.com/u/0/project/pokedex-2bfcb/overview?hl=pt-br**
+
 ## Instalação e Execução
 
 ### `npm install`

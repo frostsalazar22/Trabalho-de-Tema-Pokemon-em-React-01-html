@@ -1,0 +1,11 @@
+/* src/index.css ou outro CSS global */
+
+body {
+  margin: 0;
+  padding-top: 60px; /* Ajuste conforme a altura do cabeçalho */
+  box-sizing: border-box;
+}
+
+main {
+  padding-top: 60px; /* Caso tenha um contêiner principal em vez do body */
+}

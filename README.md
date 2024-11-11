@@ -20,7 +20,7 @@
 
 
 ## Link para o Firebase Ultilizado
-- **https://console.firebase.google.com/u/0/project/pokedex-2bfcb/overview?hl=pt-br**
+https://console.firebase.google.com/u/0/project/html-pokedex/overview?hl=pt-br
 
 ## Instalação e Execução
 

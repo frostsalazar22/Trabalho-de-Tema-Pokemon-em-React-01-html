@@ -105,3 +105,24 @@ nav ul li a {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
+/* Adicione algumas regras de estilo para posicionar corretamente os links de autenticação*/
+
+
+.auth-links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.auth-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}

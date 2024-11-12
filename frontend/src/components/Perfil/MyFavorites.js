@@ -1,6 +1,7 @@
 // src/components/Perfil/MyFavorites.js
 import React, { useState, useEffect } from 'react';
-import api from '../../services/api';
+import { db, auth } from "../../services/firebase";
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import './MyFavorites.css'; // Importação do CSS para estilos do carrossel de favoritos
 
 const MyFavorites = () => {
@@ -12,68 +13,45 @@ const MyFavorites = () => {
   }, []);
 
   const fetchFavorites = async () => {
-    const token = localStorage.getItem('token');
-    if (!token) return;
+    const user = auth.currentUser;
+    if (!user) return;
 
-    try {
-      const response = await api.get('/favorites', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setFavorites(response.data);
-    } catch (error) {
-      console.error('Erro ao buscar favoritos', error);
-    }
+    const favoritesCol = collection(db, "users", user.uid, "favorites");
+    const snapshot = await getDocs(favoritesCol);
+    setFavorites(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
   };
 
   const addFavorite = async () => {
-    const token = localStorage.getItem('token');
-    if (!token) return;
+    const user = auth.currentUser;
+    if (!user) return;
 
-    try {
-      const response = await api.post('/favorites', { pokemonId }, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setFavorites([...favorites, response.data]);
-      setPokemonId('');
-    } catch (error) {
-      console.error('Erro ao adicionar favorito', error);
-    }
+    const favoritesCol = collection(db, "users", user.uid, "favorites");
+    await addDoc(favoritesCol, { pokemonId });
+    setPokemonId("");
+    fetchFavorites();
   };
 
   const removeFavorite = async (id) => {
-    const token = localStorage.getItem('token');
-    if (!token) return;
+    const user = auth.currentUser;
+    if (!user) return;
 
-    try {
-      await api.delete(`/favorites/${id}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      setFavorites(favorites.filter(fav => fav._id !== id));
-    } catch (error) {
-      console.error('Erro ao remover favorito', error);
-    }
+    await deleteDoc(doc(db, "users", user.uid, "favorites", id));
+    fetchFavorites();
   };
 
   return (
     <div className="favorites-container">
-      <h2>Meus Favoritos</h2>
-      <input
-        type="text"
-        placeholder="ID do Pokémon"
-        value={pokemonId}
-        onChange={(e) => setPokemonId(e.target.value)}
-      />
-      <button onClick={addFavorite}>Adicionar Favorito</button>
-
-      <div className="favorites-list">
-        {favorites.map(favorite => (
-          <div key={favorite._id} className="favorite-card">
-            <img src={favorite.pokemonImage} alt={favorite.pokemonName} />
-            <p>{favorite.pokemonName}</p>
-            <button onClick={() => removeFavorite(favorite._id)}>Remover</button>
-          </div>
+      <h2>My Favorites</h2>
+      <input type="text" placeholder="Pokemon ID" value={pokemonId} onChange={(e) => setPokemonId(e.target.value)} />
+      <button onClick={addFavorite}>Add Favorite</button>
+      <ul>
+        {favorites.map(fav => (
+          <li key={fav.id}>
+            {fav.pokemonId}
+            <button onClick={() => removeFavorite(fav.id)}>Remove</button>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

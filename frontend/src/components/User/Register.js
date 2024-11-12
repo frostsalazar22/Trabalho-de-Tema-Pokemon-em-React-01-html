@@ -1,12 +1,15 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth, db } from "../../services/firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import './User.css';
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -14,25 +17,64 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, "users", user.uid), {
-        name,
-        email
-      });
+      if (user) {
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          firstName: fname,
+          lastName: lname,
+          favorites: []
+        });
+      }
 
+      toast.success("Usuário registrado com sucesso!", { position: "top-center" });
       window.location.href = "/login";
     } catch (error) {
-      console.error("Error registering:", error.message);
+      console.error("Erro ao registrar:", error.message);
+      toast.error(error.message, { position: "bottom-center" });
     }
   };
 
   return (
-    <form onSubmit={handleRegister}>
+    <div className="auth-container">
       <h2>Sign Up</h2>
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Register</button>
-    </form>
+      <form onSubmit={handleRegister}>
+        <label>First Name</label>
+        <input
+          type="text"
+          placeholder="First name"
+          onChange={(e) => setFname(e.target.value)}
+          required
+        />
+        
+        <label>Last Name</label>
+        <input
+          type="text"
+          placeholder="Last name"
+          onChange={(e) => setLname(e.target.value)}
+        />
+        
+        <label>Email address</label>
+        <input
+          type="email"
+          placeholder="Enter email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Enter password"
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        
+        <button type="submit">Sign Up</button>
+      </form>
+      <p className="forgot-password">
+        Already registered? <a href="/login">Login</a>
+      </p>
+    </div>
   );
 };
 

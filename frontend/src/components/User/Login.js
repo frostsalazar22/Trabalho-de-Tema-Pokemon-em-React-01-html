@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../services/firebase";
+import './User.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -17,12 +18,33 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <div className="auth-container">
       <h2>Login</h2>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Login</button>
-    </form>
+      <form onSubmit={handleLogin}>
+        <label>Email</label>
+        <input
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        
+        <button type="submit">Login</button>
+      </form>
+      <p className="forgot-password">
+        New user? <a href="/register">Register here</a>
+      </p>
+    </div>
   );
 };
 

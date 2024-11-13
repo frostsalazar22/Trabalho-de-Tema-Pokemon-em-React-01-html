@@ -4,9 +4,11 @@ import { auth } from "../../services/firebase";
 import './User.css';
 
 const Login = () => {
+  // Define e atualiza o estado do email e senha
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Função para realizar o login do usuário
   const handleLogin = async (e) => {
     e.preventDefault();
     try {

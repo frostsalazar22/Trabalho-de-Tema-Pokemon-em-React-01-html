@@ -6,11 +6,13 @@ import { toast } from "react-toastify";
 import './User.css';
 
 const Register = () => {
+  // Define e atualiza o estado do email, senha, primeiro nome e sobrenome
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
 
+  // Função para realizar o registro do usuário
   const handleRegister = async (e) => {
     e.preventDefault();
     try {

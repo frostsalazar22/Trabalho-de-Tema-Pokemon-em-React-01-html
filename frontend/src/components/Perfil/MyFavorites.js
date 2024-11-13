@@ -6,6 +6,7 @@ import MyPokemonCard from './MyPokemonCard';
 import './MyFavorites.css';
 
 const MyFavorites = () => {
+  // Define e atualiza o estado dos favoritos e do ID do Pokémon
   const [favorites, setFavorites] = useState([]);
   const [pokemonId, setPokemonId] = useState('');
 
@@ -21,6 +22,7 @@ const MyFavorites = () => {
     return () => unsubscribe();
   }, []);
 
+  // Função para carregar os favoritos do usuário
   const loadFavorites = async (userId) => {
     try {
       const userDoc = await getDoc(doc(db, "Users", userId));
@@ -36,6 +38,7 @@ const MyFavorites = () => {
     }
   };
 
+  // Função para adicionar um Pokémon aos favoritos do usuário
   const addFavorite = async () => {
     const user = auth.currentUser;
     if (!user || !pokemonId) return;
@@ -44,14 +47,12 @@ const MyFavorites = () => {
       const newPokemon = await fetchPokemonById(pokemonId);
       const userDocRef = doc(db, "Users", user.uid);
 
-      // Adiciona o ID do Pokémon aos favoritos no Firestore
       const userDoc = await getDoc(userDocRef);
       if (userDoc.exists()) {
         const userData = userDoc.data();
         const updatedFavorites = [...userData.favorites, pokemonId];
         await updateDoc(userDocRef, { favorites: updatedFavorites });
 
-        // Atualiza o estado local com o novo Pokémon
         setFavorites([...favorites, newPokemon]);
         setPokemonId(''); // Limpa o campo de entrada
       }
@@ -60,6 +61,7 @@ const MyFavorites = () => {
     }
   };
 
+  // Função para remover um Pokémon dos favoritos do usuário
   const removeFavorite = async (id) => {
     const user = auth.currentUser;
     if (!user) return;
@@ -73,7 +75,6 @@ const MyFavorites = () => {
         const updatedFavorites = userData.favorites.filter(favId => favId !== id);
         await updateDoc(userDocRef, { favorites: updatedFavorites });
 
-        // Remove o Pokémon do estado local
         setFavorites(favorites.filter(fav => fav.id !== id));
       }
     } catch (error) {

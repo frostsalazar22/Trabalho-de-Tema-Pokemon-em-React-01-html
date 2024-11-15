@@ -45,7 +45,7 @@ const getGeneration = (id) => {
 
 // Função assíncrona para buscar todos os Pokémons da API
 export const fetchPokemons = async () => {  // Busca os dados de cada Pokémon e os organiza em um formato adequado
-  const pokemonCount = 151;
+  const pokemonCount = 493;
   const pokemons = [];
 
   for (let i = 1; i <= pokemonCount; i++) {

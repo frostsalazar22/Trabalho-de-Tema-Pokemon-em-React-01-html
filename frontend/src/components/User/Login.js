@@ -18,7 +18,7 @@ const Login = () => {
       console.error("Error logging in:", error.message);
     }
   };
-
+  
   return (
     <div className="auth-container">
       <h2>Login</h2>
